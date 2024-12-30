@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - onboarding_flutter_wrapper (4.2.0):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - onboarding_flutter_wrapper (from `.symlinks/plugins/onboarding_flutter_wrapper/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  onboarding_flutter_wrapper:
+    :path: ".symlinks/plugins/onboarding_flutter_wrapper/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  onboarding_flutter_wrapper: 045b0e3f85429b84718a514e635fee4c047fdcf6
+
+PODFILE CHECKSUM: a57f30d18f102dd3ce366b1d62a55ecbef2158e5
+
+COCOAPODS: 1.15.2
