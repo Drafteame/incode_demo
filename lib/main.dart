@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:incode_demo/compliance_provider_result.dart';
+import 'package:incode_demo/environment.dart';
 
 import 'incode_manager.dart';
 
@@ -50,10 +51,9 @@ class _AppIncodeState extends State<AppIncode> {
               // Obtener datos de la API - startOnboarding
               _incodeManager
                   .startFlow(
-                token:
-                    'eyJhbGciOiJIUzI1NiJ9.eyJleHRlcm5hbFVzZXJJZCI6IjY3N65zJkOGI3YTM4N2FhMmUwN2M2NzQ3YiIsInJvbGUiOiJBQ0NFU1MiLCJUIjoiSSIsImtleVJlZiI6IjYzYzgzMjZlYjVhYzlhMjM1MGJlNjA1OSIsImV4cCI6MTc0MzM1NTgzMiwiaWF0IjoxNzM1NTc5ODMyfQ.3RDwuUuR1ptUnOQBam1n_1die-nhhPembmvLRgEwxSs50',
-                externalId: '6772d8b7a387aa2e07c6747b',
-                configurationId: '63c8395f93dc5f21fcb6a572',
+                token: Environment.incodeToken,
+                externalId: Environment.incodeExternalId,
+                configurationId: Environment.incodeConfigurationId,
               )
                   .then((value) {
                 if (value is ComplianceProviderError) {
