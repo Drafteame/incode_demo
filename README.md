@@ -1,5 +1,3 @@
-# incode_demo
-
 ## Incode Demo
 
 ### Environment

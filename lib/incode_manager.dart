@@ -14,9 +14,8 @@ class IncodeStartOnboardingManager {
 
   void _initialize() {
     IncodeOnboardingSdk.init(
-      testMode: false,
+      testMode: true,
       apiUrl: '${Environment.incodeApiUrl}/0/',
-      apiKey: '',
       onError: (String error) {
         debugPrint('INCODE - initialize error: $error');
         _isInitialized = false;
