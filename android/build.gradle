@@ -1,7 +1,27 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def incodeUsername = localProperties.getProperty('incode.username')
+def incodePassword = localProperties.getProperty('incode.password')
+
 allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven {
+        url 'https://repo.incode.com/artifactory/libs-incode-welcome'
+        credentials {
+                username = incodeUsername
+                password = incodePassword
+            }
+        }
     }
 }
 
