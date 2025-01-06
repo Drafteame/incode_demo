@@ -9,6 +9,19 @@ if (localPropertiesFile.exists()) {
 def incodeUsername = localProperties.getProperty('incode.username')
 def incodePassword = localProperties.getProperty('incode.password')
 
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.7.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0"
+        classpath 'com.github.triplet.gradle:play-publisher:3.7.0'
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -25,13 +38,12 @@ allprojects {
     }
 }
 
-rootProject.buildDir = "../build"
+rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
 }
-subprojects {
-    project.evaluationDependsOn(":app")
-}
+
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
